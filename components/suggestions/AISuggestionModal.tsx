@@ -331,7 +331,7 @@ const AISuggestionModal = ({ isOpen, onClose }: AISuggestionModalProps) => {
             <div className="text-center text-xs text-gray-500 pt-3 mt-3 border-t border-gray-800/50">
               <span className="flex items-center justify-center gap-1">
                 <Sparkles className="w-3 h-3" />
-                Powered by AI • Curated for cinephiles
+                Powered by AI • Curated for Piphiles
               </span>
             </div>
           )}

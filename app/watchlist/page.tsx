@@ -3,9 +3,9 @@ import PageTitle from "@/components/title/PageTitle";
 import WatchListClient from "@/components/watchlist/WatchListClient";
 
 export const metadata: Metadata = {
-  title: "Watchlist | Cineworld",
+  title: "Watchlist | PiStream",
   description:
-    "Browse and manage your personal watchlist of movies and TV shows on Cineworld.",
+    "Browse and manage your personal watchlist of movies and TV shows on PiStream.",
 };
 
 export default function WatchlistPage() {

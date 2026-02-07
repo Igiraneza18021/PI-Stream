@@ -72,7 +72,7 @@ class GeminiService {
       ? data.first_air_date ? new Date(data.first_air_date).getFullYear() : "Unknown"
       : data.release_date ? new Date(data.release_date).getFullYear() : "Unknown";
 
-    return `You are an expert cinematic researcher with deep knowledge of movies and TV shows.
+    return `You are an expert Pimatic researcher with deep knowledge of movies and TV shows.
 
 GOAL: Generate Top 10 most exciting and factual information about "${title}" (${releaseYear}) - a ${isTV ? "TV Series" : "Movie"}.
 

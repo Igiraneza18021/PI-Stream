@@ -47,14 +47,14 @@ const Footer = () => {
                 className="h-4 w-4 text-red-500 fill-current animate-pulse"
                 aria-hidden="true"
               />
-              <span>© {new Date().getFullYear()} Cineworld</span>
+              <span>© {new Date().getFullYear()} PiStream</span>
             </div>
           </div>
 
-          {/* Social Links */}
+          {/* Social Links
           <div className="flex flex-col items-center md:items-end">
             <Link
-              href="https://github.com/alanvarghesepaul22/CINEWORLD-NextJS"
+              href="https://github.com/alanvarghesepaul22/PiStream-NextJS"
               target="_blank"
               rel="noopener noreferrer"
               className="group"
@@ -66,7 +66,7 @@ const Footer = () => {
             <p className="text-gray-500 text-xs mt-2 text-center md:text-right">
               Open Source Project
             </p>
-          </div>
+          </div> */}
         </div>
 
         {/* Bottom Border */}

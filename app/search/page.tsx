@@ -5,9 +5,9 @@ import SearchPageContent from "@/components/search/SearchPageContent";
 import {PageLoading} from "@/components/loading/PageLoading";
 
 export const metadata: Metadata = {
-  title: "Search | Cineworld",
+  title: "Search | PiStream",
   description:
-    "Browse all movies and tv shows currently available on Cineworld. Find trending, top-rated, and new releases.",
+    "Browse all movies and tv shows currently available on PiStream. Find trending, top-rated, and new releases.",
 };
 
 export default function SearchPage() {

@@ -3,9 +3,9 @@ import InfoNotFound from "@/components/not-found/InfoNotFound";
 import TvInfo from "@/components/series/TvInfo";
 
 export const metadata: Metadata = {
-  title: "Series | Cineworld",
+  title: "Series | PiStream",
   description:
-    "Browse all series available on Cineworld. Find trending, top-rated, and new releases.",
+    "Browse all series available on PiStream. Find trending, top-rated, and new releases.",
 };
 
 interface SeriesDetailsPageProps {
