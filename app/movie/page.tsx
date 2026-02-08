@@ -1,24 +1,48 @@
 import { Metadata } from "next";
 import { Suspense } from "react";
-import PageTitle from "@/components/title/PageTitle";
-import MoviePageClient from "@/components/movie/MoviePageClient";
-import {PageLoading} from "@/components/loading/PageLoading";
+import MovieInfo from "@/components/movie/MovieInfo"; // Using the component you mentioned earlier
+import { PageLoading } from "@/components/loading/PageLoading";
 
-export const metadata: Metadata = {
-  title: "All Movies | Pifilms",
-  description:
-    "Browse all movies available on Pifilms. Find trending, top-rated, and new releases.",
-};
+interface MovieDetailPageProps {
+  params: Promise<{
+    id: string;
+  }>;
+}
 
-export default function MoviePage() {
+// 1. Dynamic Metadata (Fixes the SEO/Index issue)
+export async function generateMetadata({ params }: MovieDetailPageProps): Promise<Metadata> {
+  const { id } = await params;
+  return {
+    title: `Watch Movie ${id} | Pifilms`,
+    description: `Stream movie ${id} on Pifilms. Find trending, top-rated, and new releases.`,
+  };
+}
+
+export default async function MovieDetailPage({ params }: MovieDetailPageProps) {
+  // 2. Await the params (Required in Next.js 15+)
+  const { id } = await params;
+  const parsedId = parseInt(id, 10);
+
+  // 3. Schema.org JSON-LD (For Google Search "Rich Results")
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Movie',
+    'name': `Movie ${id}`, 
+    'url': `https://pi-films.netlify.app/movie/${id}`,
+    // You can expand this once you fetch real movie data
+  };
+
   return (
     <div className="app-bg-enhanced mt-24">
-      <PageTitle
-        segments={[{ text: "All" }, { text: " Movies", isPrimary: true }]}
+      {/* Injecting JSON-LD into the head */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <Suspense fallback={<PageLoading>Loading movies...</PageLoading>}>
-        <MoviePageClient />
+      <Suspense fallback={<PageLoading>Loading movie details...</PageLoading>}>
+        {/* Pass the ID to your info component */}
+        <MovieInfo id={parsedId} />
       </Suspense>
     </div>
   );
