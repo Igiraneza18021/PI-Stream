@@ -62,7 +62,7 @@ class ConsoleLogger implements Logger {
 class ProductionLogger implements Logger {
   private transports: Array<(entry: LogEntry) => void | Promise<void>> = [];
   private pendingLogs: Promise<void>[] = [];
-  private rotatingfilms: NodeJS.Writablefilms | null = null; // rotating-file-films instance
+  private rotatingFileStream: NodeJS.WritableStream | null = null; // rotating-file-stream instance
 
   constructor() {
     // Initialize production transports
@@ -94,11 +94,11 @@ class ProductionLogger implements Logger {
       // Add transport that uses the rotating films
       this.transports.push(async (entry: LogEntry) => {
         try {
-          if (this.rotatingfilms) {
+          if (this.rotatingFileStream) {
             const logLine = JSON.stringify(entry) + '\n';
-            this.rotatingfilms.write(logLine);
+            this.rotatingFileStream.write(logLine);
           } else {
-            throw new Error('Rotating films not initialized');
+            throw new Error('Rotating file stream not initialized');
           }
         } catch (error) {
           // Fallback to console if file write fails
@@ -115,11 +115,11 @@ class ProductionLogger implements Logger {
   private async initializeRotatingFilefilms(filePath: string): Promise<void> {
     try {
       // Dynamic import to handle optional dependency
-      const rfs = await import('rotating-file-films').catch(() => null);
+      const rfs = await import('rotating-file-stream').catch(() => null);
       
       if (!rfs) {
-        // Fallback to basic file transport if rotating-file-films is not available
-        console.warn('rotating-file-films package not found, using basic file transport');
+        // Fallback to basic file transport if rotating-file-stream is not available
+        console.warn('rotating-file-stream package not found, using basic file transport');
         this.addBasicFileTransport(filePath);
         return;
       }
@@ -165,16 +165,16 @@ class ProductionLogger implements Logger {
         path: logDir,
       };
 
-      // Create rotating films
-      this.rotatingfilms = rfs.createfilms(logFileName, rotationOptions);
+      // Create rotating file stream
+      this.rotatingFileStream = rfs.createStream(logFileName, rotationOptions);
 
-      // Handle films errors
-      this.rotatingfilms.on('error', (error: Error) => {
-        console.error('Rotating file films error:', error);
+      // Handle file stream errors
+      this.rotatingFileStream.on('error', (error: Error) => {
+        console.error('Rotating file stream error:', error);
       });
 
-      this.rotatingfilms.on('warning', (warning: Error) => {
-        console.warn('Rotating file films warning:', warning);
+      this.rotatingFileStream.on('warning', (warning: Error) => {
+        console.warn('Rotating file stream warning:', warning);
       });
 
       // Log successful initialization
@@ -316,12 +316,12 @@ class ProductionLogger implements Logger {
       await Promise.allSettled(this.pendingLogs);
       this.pendingLogs = [];
 
-      // Close the rotating file films if it exists
-      if (this.rotatingfilms) {
+      // Close the rotating file stream if it exists
+      if (this.rotatingFileStream) {
         return new Promise((resolve, reject) => {
-          this.rotatingfilms!.end((error?: Error) => {
+          this.rotatingFileStream!.end((error?: Error) => {
             if (error) {
-              console.error('Error closing rotating films:', error);
+              console.error('Error closing rotating file stream:', error);
               reject(error);
             } else {
               resolve();
