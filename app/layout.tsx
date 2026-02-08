@@ -10,9 +10,6 @@ const inter = Inter({ subsets: ["latin"] });
 
 
 export const metadata = {
-  verification: {
-    google: 'LNIHjq83_6ghxpoOyNT2MpMlnr9ehcj-rUehGV1cM7M',
-  },
   title: "Pifilms",
   description: "A films of Pima",
 };
@@ -26,6 +23,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en">
       <body className={cn(inter.className, "app-bg-enhanced")}>
         <Header />
+        <meta name="google-site-verification" content="LNIHjq83_6ghxpoOyNT2MpMlnr9ehcj-rUehGV1cM7M" />
         {children}
         <Footer />
         <Toaster position="top-right" richColors />
