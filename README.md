@@ -1,18 +1,18 @@
-# Welcome to PiStream! The Stream of Pima.
-PiStream is a modern movie and TV show discovery website built with TypeScript, Next.js 15, and Tailwind CSS, featuring TMDB API integration.
+# Welcome to Pifilms! The films of Pima.
+Pifilms is a modern movie and TV show discovery website built with TypeScript, Next.js 15, and Tailwind CSS, featuring TMDB API integration.
 
 ## Overview
 
-PiStream is a dynamic and immersive movie and TV show discovery platform that brings you information about an extensive collection of films and TV shows from various genres. Powered by React, Next.js 15, TypeScript, and Tailwind CSS, PiStream offers an unparalleled user experience with modern UI components, responsive design, and smooth animations.
+Pifilms is a dynamic and immersive movie and TV show discovery platform that brings you information about an extensive collection of films and TV shows from various genres. Powered by React, Next.js 15, TypeScript, and Tailwind CSS, Pifilms offers an unparalleled user experience with modern UI components, responsive design, and smooth animations.
 
 ## Screenshots
-![Screenshot 2023-07-13 230452](https://github.com/alanvarghesepaul22/PiStream-NextJS/assets/86376232/965879a8-9604-4b77-a83c-026f594a2e21)
+![Screenshot 2023-07-13 230452](https://github.com/alanvarghesepaul22/Pifilms-NextJS/assets/86376232/965879a8-9604-4b77-a83c-026f594a2e21)
 
-![Screenshot 2023-07-21 211717](https://github.com/alanvarghesepaul22/PiStream-NextJS/assets/86376232/fae66266-2242-4311-9f53-8258c644b030)
+![Screenshot 2023-07-21 211717](https://github.com/alanvarghesepaul22/Pifilms-NextJS/assets/86376232/fae66266-2242-4311-9f53-8258c644b030)
 
 ## Responsive Design 
 
-![Untitled-1](https://github.com/alanvarghesepaul22/PiStream-NextJS/assets/86376232/a7bee4e3-59bd-4f64-8e47-d8d821f4425d)
+![Untitled-1](https://github.com/alanvarghesepaul22/Pifilms-NextJS/assets/86376232/a7bee4e3-59bd-4f64-8e47-d8d821f4425d)
 
 
 ## Key Features
@@ -32,8 +32,8 @@ PiStream is a dynamic and immersive movie and TV show discovery platform that br
 1. Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/alanvarghesepaul22/PiStream-NextJS.git
-cd PiStream-NextJS
+git clone https://github.com/alanvarghesepaul22/Pifilms-NextJS.git
+cd Pifilms-NextJS
 ```
 
 2. Install the dependencies:
@@ -62,7 +62,7 @@ npm install
 npm run dev
 ```
 
-5. Open your browser and navigate to `http://localhost:3000` to access PiStream.
+5. Open your browser and navigate to `http://localhost:3000` to access Pifilms.
 
 ## Tech Stack
 
@@ -113,12 +113,12 @@ We welcome contributions from the open-source community! If you find a bug, have
 
 ## Acknowledgments
 
-- Our gratitude to [TMDB](https://www.themoviedb.org/) for providing the incredible API that powers PiStream.
+- Our gratitude to [TMDB](https://www.themoviedb.org/) for providing the incredible API that powers Pifilms.
 
 - A big thank you to the developers of React, Next.js, and Tailwind CSS for creating these fantastic frameworks that made this project possible.
 
 ---
 
-We hope you enjoy exploring PiStream as much as we enjoyed creating it! Your feedback and support mean the Stream to us. Feel free to reach out with any questions or suggestions.
+We hope you enjoy exploring Pifilms as much as we enjoyed creating it! Your feedback and support mean the films to us. Feel free to reach out with any questions or suggestions.
 
-Happy movie streaming! 🍿🎥
+Happy movie filmsing! 🍿🎥

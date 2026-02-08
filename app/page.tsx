@@ -3,9 +3,9 @@ import Hero from "@/components/hero/Hero";
 import CategorySection from "@/components/info/CategorySection";
 
 export const metadata: Metadata = {
-  title: "Home | PiStream",
+  title: "Home | Pifilms",
   description:
-    "Browse all movies and tv shows currently available on PiStream. Find trending, top-rated, and new releases.",
+    "Browse all movies and tv shows currently available on Pifilms. Find trending, top-rated, and new releases.",
 };
 
 export default async function HomePage() {

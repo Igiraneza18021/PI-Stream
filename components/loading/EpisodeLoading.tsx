@@ -101,7 +101,7 @@ const EpisodeLoading = ({ className = "" }: EpisodeLoadingProps) => {
               </div>
             </div>
 
-            {/* Stream Info Loading */}
+            {/* films Info Loading */}
             <div className="glass-container">
               <div className="text-center space-y-2 animate-pulse">
                 <div className="h-5 bg-gray-600/50 rounded w-32 mx-auto mb-2" />

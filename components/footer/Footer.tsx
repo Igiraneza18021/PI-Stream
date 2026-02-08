@@ -47,14 +47,14 @@ const Footer = () => {
                 className="h-4 w-4 text-red-500 fill-current animate-pulse"
                 aria-hidden="true"
               />
-              <span>© {new Date().getFullYear()} PiStream</span>
+              <span>© {new Date().getFullYear()} Pifilms</span>
             </div>
           </div>
 
           {/* Social Links
           <div className="flex flex-col items-center md:items-end">
             <Link
-              href="https://github.com/alanvarghesepaul22/PiStream-NextJS"
+              href="https://github.com/alanvarghesepaul22/Pifilms-NextJS"
               target="_blank"
               rel="noopener noreferrer"
               className="group"

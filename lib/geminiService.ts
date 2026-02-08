@@ -1,6 +1,6 @@
 /**
  * Gemini AI Service for Movie & Series Insights
- * Clean, streamlined implementation using Gemini API
+ * Clean, filmslined implementation using Gemini API
  */
 
 import { GoogleGenAI } from "@google/genai";
@@ -91,7 +91,7 @@ ${isTV && data.number_of_seasons ? `- Seasons: ${data.number_of_seasons}, Episod
 Requirements:
 1. Focus on widely-known, well-documented facts from your training data
 2. Format as compelling, single-paragraph facts
-3. Include box office/streaming performance if available
+3. Include box office/filmsing performance if available
 4. Cover production stories, cast details, awards, controversies
 5. Make each fact attention-grabbing and viral-worthy
 6. Ensure accuracy - only include information you're confident about

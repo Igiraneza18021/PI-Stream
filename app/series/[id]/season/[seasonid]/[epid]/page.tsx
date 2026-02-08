@@ -3,9 +3,9 @@ import EpisodeNotFound from "@/components/not-found/EpisodeNotFound";
 import EpisodeInfo from "@/components/series/EpisodeInfo";
 
 export const metadata: Metadata = {
-  title: "Episode | PiStream",
+  title: "Episode | Pifilms",
   description:
-    "Watch and explore episode details, cast, crew, and more on PiStream.",
+    "Watch and explore episode details, cast, crew, and more on Pifilms.",
 };
 
 interface EpisodeDetailsPageProps {

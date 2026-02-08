@@ -5,9 +5,9 @@ import MoviePageClient from "@/components/movie/MoviePageClient";
 import {PageLoading} from "@/components/loading/PageLoading";
 
 export const metadata: Metadata = {
-  title: "All Movies | PiStream",
+  title: "All Movies | Pifilms",
   description:
-    "Browse all movies available on PiStream. Find trending, top-rated, and new releases.",
+    "Browse all movies available on Pifilms. Find trending, top-rated, and new releases.",
 };
 
 export default function MoviePage() {

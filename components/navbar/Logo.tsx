@@ -11,7 +11,7 @@ const Logo = () => {
         <p>Pi</p>
       </div>
       <div className="border border-primary py-1 text-primary px-2 ">
-        <p>Stream</p>
+        <p>films</p>
       </div>
     </Link>
   );

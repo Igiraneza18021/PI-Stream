@@ -3,7 +3,7 @@ import SeasonNotFound from "@/components/not-found/SeasonNotFound";
 import SeasonInfo from "@/components/series/SeasonInfo";
 
 export const metadata: Metadata = {
-  title: "Season Details | PiStream",
+  title: "Season Details | Pifilms",
   description:
     "View detailed information about TV show seasons including episodes, cast, and ratings.",
 };

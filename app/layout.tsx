@@ -9,8 +9,8 @@ import { cn } from "@/lib/utils";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "PiStream",
-  description: "A Stream of Pima",
+  title: "Pifilms",
+  description: "A films of Pima",
 };
 
 interface RootLayoutProps {

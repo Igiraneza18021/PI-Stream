@@ -62,7 +62,7 @@ class ConsoleLogger implements Logger {
 class ProductionLogger implements Logger {
   private transports: Array<(entry: LogEntry) => void | Promise<void>> = [];
   private pendingLogs: Promise<void>[] = [];
-  private rotatingStream: NodeJS.WritableStream | null = null; // rotating-file-stream instance
+  private rotatingfilms: NodeJS.Writablefilms | null = null; // rotating-file-films instance
 
   constructor() {
     // Initialize production transports
@@ -88,17 +88,17 @@ class ProductionLogger implements Logger {
 
   private addFileTransport(filePath: string): void {
     try {
-      // Initialize rotating file stream
-      this.initializeRotatingFileStream(filePath);
+      // Initialize rotating file films
+      this.initializeRotatingFilefilms(filePath);
       
-      // Add transport that uses the rotating stream
+      // Add transport that uses the rotating films
       this.transports.push(async (entry: LogEntry) => {
         try {
-          if (this.rotatingStream) {
+          if (this.rotatingfilms) {
             const logLine = JSON.stringify(entry) + '\n';
-            this.rotatingStream.write(logLine);
+            this.rotatingfilms.write(logLine);
           } else {
-            throw new Error('Rotating stream not initialized');
+            throw new Error('Rotating films not initialized');
           }
         } catch (error) {
           // Fallback to console if file write fails
@@ -112,14 +112,14 @@ class ProductionLogger implements Logger {
     }
   }
 
-  private async initializeRotatingFileStream(filePath: string): Promise<void> {
+  private async initializeRotatingFilefilms(filePath: string): Promise<void> {
     try {
       // Dynamic import to handle optional dependency
-      const rfs = await import('rotating-file-stream').catch(() => null);
+      const rfs = await import('rotating-file-films').catch(() => null);
       
       if (!rfs) {
-        // Fallback to basic file transport if rotating-file-stream is not available
-        console.warn('rotating-file-stream package not found, using basic file transport');
+        // Fallback to basic file transport if rotating-file-films is not available
+        console.warn('rotating-file-films package not found, using basic file transport');
         this.addBasicFileTransport(filePath);
         return;
       }
@@ -165,16 +165,16 @@ class ProductionLogger implements Logger {
         path: logDir,
       };
 
-      // Create rotating stream
-      this.rotatingStream = rfs.createStream(logFileName, rotationOptions);
+      // Create rotating films
+      this.rotatingfilms = rfs.createfilms(logFileName, rotationOptions);
 
-      // Handle stream errors
-      this.rotatingStream.on('error', (error: Error) => {
-        console.error('Rotating file stream error:', error);
+      // Handle films errors
+      this.rotatingfilms.on('error', (error: Error) => {
+        console.error('Rotating file films error:', error);
       });
 
-      this.rotatingStream.on('warning', (warning: Error) => {
-        console.warn('Rotating file stream warning:', warning);
+      this.rotatingfilms.on('warning', (warning: Error) => {
+        console.warn('Rotating file films warning:', warning);
       });
 
       // Log successful initialization
@@ -186,7 +186,7 @@ class ProductionLogger implements Logger {
       });
 
     } catch (error) {
-      throw new Error(`Failed to initialize rotating file stream: ${error instanceof Error ? error.message : String(error)}`);
+      throw new Error(`Failed to initialize rotating file films: ${error instanceof Error ? error.message : String(error)}`);
     }
   }
 
@@ -316,12 +316,12 @@ class ProductionLogger implements Logger {
       await Promise.allSettled(this.pendingLogs);
       this.pendingLogs = [];
 
-      // Close the rotating file stream if it exists
-      if (this.rotatingStream) {
+      // Close the rotating file films if it exists
+      if (this.rotatingfilms) {
         return new Promise((resolve, reject) => {
-          this.rotatingStream!.end((error?: Error) => {
+          this.rotatingfilms!.end((error?: Error) => {
             if (error) {
-              console.error('Error closing rotating stream:', error);
+              console.error('Error closing rotating films:', error);
               reject(error);
             } else {
               resolve();
