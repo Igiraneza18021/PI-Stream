@@ -1,15 +1,15 @@
 {
-  "name": "Pistream-nextjs",
+  "name": "Pi-films",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-   "dev": "next dev --webpack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint .",
-    "clean": "rimraf .next && npm cache clean --force",
-    "fresh": "npm run clean && npm install && npm run dev"
-  },
+  "dev": "next dev --webpack",
+  "build": "next build --webpack",  // Add the --webpack flag here
+  "start": "next start",
+  "lint": "eslint .",
+  "clean": "rimraf .next && npm cache clean --force",
+  "fresh": "npm run clean && npm install && npm run dev"
+},
   "dependencies": {
     "@google/genai": "^1.22.0",
     "@radix-ui/react-dialog": "^1.1.15",
