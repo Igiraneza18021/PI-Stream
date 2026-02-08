@@ -8,7 +8,11 @@ import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
+
 export const metadata = {
+  verification: {
+    google: 'LNIHjq83_6ghxpoOyNT2MpMlnr9ehcj-rUehGV1cM7M',
+  },
   title: "Pifilms",
   description: "A films of Pima",
 };
